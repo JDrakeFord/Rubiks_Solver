@@ -38,7 +38,7 @@ class Piece:
         return "Position (x,y,z) = " + str(self.position) + "\nColors (x,y,z) = "+ str(self.colors) + "\nType: " + self.getType()
 
 def main():
-    test = Piece([1, 1, 1], ['None', 'None', 'g'])
+    test = Piece([1, 1, 1], ['None', 'None', 'w'])
     print(test)
 
 if __name__ == '__main__':
