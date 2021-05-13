@@ -1,7 +1,7 @@
 import numpy as np
 import Piece as pc
 
-
+#Cube class
 class Cube:
     pieceList = []
 
