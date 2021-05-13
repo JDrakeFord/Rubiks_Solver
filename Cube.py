@@ -26,7 +26,7 @@ def main():
     print(test)
 
 
-
+//BRUH
 
 if __name__ == '__main__':
     main()
