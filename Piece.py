@@ -13,6 +13,7 @@ class Piece:
             self.colors[i] = inputColors[i]
             self.setType()
         cube.addPiece(self)
+        cube.addToTypeList(self)
 
     def setType(self):
         count = 0
@@ -37,6 +38,9 @@ class Piece:
         return self.type
 
     def __str__(self):
+        return "Position (x,y,z) = " + str(self.position) + "\nColors (x,y,z) = "+ str(self.colors) + "\nType: " + self.getType()
+
+    def __repr__(self):
         return "Position (x,y,z) = " + str(self.position) + "\nColors (x,y,z) = "+ str(self.colors) + "\nType: " + self.getType()
 
 
