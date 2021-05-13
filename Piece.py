@@ -1,4 +1,5 @@
 import numpy as np
+import Cube as cb
 
 
 class Piece:
@@ -6,11 +7,12 @@ class Piece:
     colors = ['w', 'w', 'w']
     type = "Corner"
 
-    def __init__(self, inputPosition, inputColors):
+    def __init__(self, inputPosition, inputColors, cube):
         for i in range(0, 3):
             self.position[i] = inputPosition[i]
             self.colors[i] = inputColors[i]
             self.setType()
+        cube.addPiece(self)
 
     def setType(self):
         count = 0
@@ -37,11 +39,5 @@ class Piece:
     def __str__(self):
         return "Position (x,y,z) = " + str(self.position) + "\nColors (x,y,z) = "+ str(self.colors) + "\nType: " + self.getType()
 
-def main():
-    test = Piece([1, 1, 1], ['None', 'None', 'w'])
-    print(test)
-
-if __name__ == '__main__':
-    main()
 
 
