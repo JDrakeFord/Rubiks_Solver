@@ -7,12 +7,14 @@ class Cube:
     centerList = []
     edgeList = []
     cornerList = []
+    cubeString = ''
 
-    def __init__(self):
+    def __init__(self, cube_string):
         self.pieceList = []
         self.centerList = []
         self.edgeList = []
         self.cornerList = []
+        self.cubeString = cube_string
 
     def getPieceList(self):
         return self.pieceList
@@ -38,16 +40,23 @@ class Cube:
             self.cornerList.append(piece)
 
     def __str__(self):
-        return 'This cube has ' + str(len(self.pieceList)) + ' pieces so far.'
+        part1 = 'This cube has ' + str(len(self.pieceList)) + ' piece objects so far.\n' \
+               'This cube has ' + str(len(self.centerList)) + ' center piece objects.\n' \
+               'This cube has ' + str(len(self.edgeList)) + ' edge piece objects.\n' \
+               'This cube has ' + str(len(self.cornerList)) + ' corner piece objects.\n\n'
+        part2 = ''
+
+        return part1 + part2
+
 
 #main method
 def main():
-    test = Cube()
+    test = Cube('')
     print(test)
     print(test.getCornerList())
 
-
-    testPiece = pc.Piece([0, 0, 0], ['w', 'None', 'r'], test)
+    testPiece = pc.Piece([0, 0, 0], ['w', 'g', 'r'], test)
+    testPiece2 = pc.Piece([0, 1, 0], ['w', 'None', 'r'], test)
     print(test)
     print(test.getEdgeList())
 
