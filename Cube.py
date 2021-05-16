@@ -1,4 +1,4 @@
-import numpy as np
+#imports
 from maths import Point, Matrix
 
 # 90 degree rotations in the XY plane. CW is clockwise, CC is counter-clockwise.
@@ -29,9 +29,6 @@ ROT_YZ_CC = Matrix(1, 0, 0,
 # Cube class
 class Cube:
     pieceList = []
-    centerList = []
-    edgeList = []
-    cornerList = []
     cubeString = ''
 
     def __init__(self, cube_string):
@@ -40,6 +37,19 @@ class Cube:
         self.edgeList = []
         self.cornerList = []
         self.cubeString = cube_string
+
+    def R(self):
+        for piece in self.pieceList:
+            if piece.getPosition().getitem():
+                print("nice")
+
+
+    def F(self):
+        for piece in self.pieceList:
+            if piece.getPosition().getX() == 1:
+                piece = piece * ROT_YZ_CW
+
+
 
     def getPieceList(self):
         return self.pieceList
@@ -75,7 +85,7 @@ class Cube:
 
 # Piece class
 class Piece:
-    position = [0, 0, 0]
+    position = Point(0,0,0)
     colors = ['w', 'w', 'w']
     type = "Corner"
 
@@ -101,6 +111,10 @@ class Piece:
 
 
     def getPosition(self):
+        """
+        :param:self
+        :return: Point object for position
+        """
         return self.position
 
     def getColors(self):
@@ -114,20 +128,3 @@ class Piece:
 
     def __repr__(self):
         return "Position (x,y,z) = " + str(self.position) + "\nColors (x,y,z) = "+ str(self.colors) + "\nType: " + self.getType()
-
-
-#main method
-def main():
-    test = Cube('')
-    print(test)
-    print(test.getCornerList())
-
-    testPiece = pc.Piece([0, 0, 0], ['w', 'g', 'r'], test)
-    testPiece2 = pc.Piece([0, 1, 0], ['w', 'None', 'r'], test)
-    print(test)
-    print(test.getEdgeList())
-
-
-
-if __name__ == '__main__':
-    main()
