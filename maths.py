@@ -42,14 +42,16 @@ class Point:
                      self.z * other.x - self.x * other.z,
                      self.x * other.y - self.y * other.x)
 
-    def __getitem__(self, item):
-        if item == 0:
-            return self.x
-        elif item == 1:
-            return self.y
-        elif item == 2:
-            return self.z
-        raise IndexError("Point index out of range")
+    def getX(self):
+        return self.x
+
+
+    def getY(self):
+        return self.y
+
+
+    def getZ(self):
+        return self.z
 
     def __iter__(self):
         yield self.x
